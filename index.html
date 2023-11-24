@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github finder</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <header class="px-5 py-3 mb-5 bg-[purple] text-[white]">
+        <h5 class="text-3xl font-semibold">Github User Finder</h5>
+    </header>
+
+    <form class="m-5">
+        <label>Search :- </label>
+        <input class="border-[black] border-2 search-input px-1 py-1" type="text" placeholder="enter username">
+        <input type="reset" class="rester border-[black] border-2 px-1 py-1" value="Rest">
+        <input type="submit" class="search-btn border-[black] border-2 px-1 py-1" value="Submit">
+    </form>
+
+    <div class="result flex justify-center items-center flex-wrap gap-10 h-full w-[80%] mt-8 mb-8"></div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
