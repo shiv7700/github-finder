@@ -27,18 +27,21 @@ async function getData() {
       // now hit api and put result
       for (let i = 0; i < users.length; i++) {
         const login = document.createElement("p");
+        const repo = document.createElement("a");
         const dp = document.createElement("img");
         const gitUrl = document.createElement("a");
         const div = document.createElement("div");
-        div.append(dp, login, gitUrl);
+        div.append(dp, login, gitUrl, repo);
         login.innerHTML = `Name : ${users[i].login}`;
         dp.src = `${users[i].avatar_url}`;
         gitUrl.textContent = `Github : ${users[i].html_url}`;
         gitUrl.target = "_blank";
         gitUrl.href = users[i].html_url;
+        repo.innerHTML = `repo link : https://github.com/orgs/${users[i].login}/repositories`;
+        repo.href = `https://github.com/${users[i].login}?tab=repositories`;
+        repo.target = "_blank";
         result.append(div);
         // userObject();
-        console.log(users[i].url);
       }
     } catch (error) {
       console.log("error is", error);

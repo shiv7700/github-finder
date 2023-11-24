@@ -16,10 +16,11 @@ body {
 
 .result > div {
   border: 2px solid;
-  height: 250px;
+  height: 290px;
   width: 250px;
-  padding: 20px 20px;
+  padding: 20px;
   border-radius: 10px;
+  word-wrap: break-word;
 }
 
 input {
@@ -33,4 +34,16 @@ input {
 input:hover {
   cursor: pointer;
   color: blue;
+}
+
+a:hover {
+  color: blue;
+}
+
+img:hover {
+  border-color: blue;
+}
+
+a {
+  display: block;
 }
