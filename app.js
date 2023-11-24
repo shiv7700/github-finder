@@ -1,5 +1,4 @@
 // api url : // https://api.github.com/search/users?q=${username}
-// user object : https://api.github.com/users/${username}
 
 const form = document.querySelector("form");
 const rester = document.querySelector(".rester");
@@ -32,7 +31,7 @@ async function getData() {
         const gitUrl = document.createElement("a");
         const div = document.createElement("div");
         div.append(dp, login, gitUrl, repo);
-        login.innerHTML = `Name : ${users[i].login}`;
+        login.innerHTML = `Username : ${users[i].login}`;
         dp.src = `${users[i].avatar_url}`;
         gitUrl.textContent = `Github : ${users[i].html_url}`;
         gitUrl.target = "_blank";
@@ -41,7 +40,6 @@ async function getData() {
         repo.href = `https://github.com/${users[i].login}?tab=repositories`;
         repo.target = "_blank";
         result.append(div);
-        // userObject();
       }
     } catch (error) {
       console.log("error is", error);
@@ -55,10 +53,3 @@ rester.addEventListener("click", function () {
   const result = document.querySelector(".result");
   result.innerHTML = "";
 });
-
-// async function userObject() {
-//   const username = users[i].url;
-//   const res = await fetch(`https://api.github.com/users/${username}`);
-//   const data = await res.json();
-//   console.log(data);
-// }
