@@ -6,4 +6,4 @@ Discover GitHub users effortlessly with the GitHub User Finder. This intuitive t
 const api = `https://api.github.com/search/users?q=${username};
 ```
 
-hosted link : https://shiv7700.github.io/github-finder/
+deployed link : https://shiv7700.github.io/github-finder/

@@ -47,3 +47,10 @@ img:hover {
 a {
   display: block;
 }
+
+@media only screen and (max-width: 800px) {
+  body {
+    font-family: "Montserrat Alternates", "sans-serif";
+    font-weight: bold;
+  }
+}
