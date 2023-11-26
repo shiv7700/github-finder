@@ -29,6 +29,11 @@ async function getData() {
       }
       // now hit api and put result
       for (let i = 0; i < users.length; i++) {
+        const res = await fetch(
+          `https://api.github.com/users/${users[i].login}`
+        );
+        const dats = await res.json();
+        console.log(dats);
         const login = document.createElement("p");
         const repo = document.createElement("a");
         const dp = document.createElement("img");
@@ -45,8 +50,8 @@ async function getData() {
         gitUrl.href = users[i].html_url;
         type.innerHTML = `type : ${users[i].type}`;
         repo.innerHTML = `repo link : open in new tab`;
-        follower.innerHTML = `<span>followers : ${data.followers}</span>`;
-        following.innerHTML = `<span>following : ${data.following}</span>`;
+        follower.innerHTML = `<span>followers : ${dats.followers}</span>`;
+        following.innerHTML = `<span>following : ${dats.following}</span>`;
         repo.href = `https://github.com/${users[i].login}?tab=repositories`;
         repo.target = "_blank";
         result.append(div);
